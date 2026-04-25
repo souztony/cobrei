@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: cobrei
+      POSTGRES_PASSWORD: cobreipassword
+      POSTGRES_DB: cobrei
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
